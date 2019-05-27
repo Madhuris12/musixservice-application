@@ -1,5 +1,4 @@
 package com.stackroute.musixservice.service;
-
 import com.stackroute.musixservice.domain.Track;
 import com.stackroute.musixservice.exceptions.TrackAlreadyExistsException;
 import com.stackroute.musixservice.repository.TrackRepository;
@@ -19,8 +18,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 
-public class MusixServiceTest {
-
+public class TrackServiceTest {
   private Track track;
 
   //Create a mock for UserRepository
@@ -30,11 +28,11 @@ public class MusixServiceTest {
   //Inject the mocks as dependencies into UserServiceImpl
   @InjectMocks
   private TrackServiceImpl trackService;
-  List<Track> list= null;
+  List<Track> list = null;
 
 
   @Before
-  public void setUp(){
+  public void setUp() {
     //Initialising the mock object
     MockitoAnnotations.initMocks(this);
     track = new Track();
@@ -48,44 +46,36 @@ public class MusixServiceTest {
   }
 
   @Test
-  public void saveUserTestSuccess() throws TrackAlreadyExistsException {
+  public void saveTrackTestSuccess() throws Exception {
 
     when(trackRepository.save((Track) any())).thenReturn(track);
-    Track savedTrack = trackService.savedTrack(track);
-    Assert.assertEquals(track,savedTrack);
+    Track savedTrack = trackService.saveTrack(track);
+    Assert.assertEquals(track, savedTrack);
 
     //verify here verifies that userRepository save method is only called once
-    verify(trackRepository,times(1)).save(track);
+    verify(trackRepository, times(1)).save(track);
 
   }
 
   @Test(expected = TrackAlreadyExistsException.class)
-  public void saveUserTestFailure() throws TrackAlreadyExistsException {
+  public void saveTrackTestFailure() throws Exception {
     when(trackRepository.save((Track) any())).thenReturn(null);
-    Track savedTrack = trackService.savedTrack(track);
-    System.out.println("savedUser" + savedTrack);
-    Assert.assertEquals(track,savedUser);
-
-       /*doThrow(new UserAlreadyExistException()).when(userRepository).findById(eq(101));
-       userService.saveUser(user);*/
+    Track savedUser = trackService.saveTrack(track);
+    System.out.println("savedUser" + savedUser);
+    Assert.assertEquals(track, savedUser);
 
 
   }
 
   @Test
-  public void getAllUser(){
+  public void showAllTrack() {
 
     trackRepository.save(track);
     //stubbing the mock to return specific data
     when(trackRepository.findAll()).thenReturn(list);
-    List<Track> userlist = trackService.getAllTrack();
-    Assert.assertEquals(list,userlist);
+    List<Track> tracklist = trackService.showAllTrack();
+    Assert.assertEquals(list, tracklist);
   }
-
-
-
-
-
 }
 
 
