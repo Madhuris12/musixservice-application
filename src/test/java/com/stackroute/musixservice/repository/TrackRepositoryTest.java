@@ -57,12 +57,12 @@ public class TrackRepositoryTest {
     @Test
     public void testGetAlltrack(){
         Track track = new Track(4,"mungaru male","Singer :Sonu Nigam");
-        Track track1 = new Track(11,"galipata","good");
+        Track track1 = new Track(11,"mungaru male","good");
         trackRepository.save(track);
         trackRepository.save(track1);
 
         List<Track> list = (List<Track>) trackRepository.findAll();
-        Assert.assertEquals("mungaru male",list.get(4).getTrackName());
+        Assert.assertEquals("mungaru male",list.get(0).getTrackName());
     }
 
 }

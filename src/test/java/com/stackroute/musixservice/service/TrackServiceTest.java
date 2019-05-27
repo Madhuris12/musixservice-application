@@ -21,11 +21,11 @@ import static org.mockito.Mockito.*;
 public class TrackServiceTest {
   private Track track;
 
-  //Create a mock for UserRepository
+  //Create a mock
   @Mock
   private TrackRepository trackRepository;
 
-  //Inject the mocks as dependencies into UserServiceImpl
+
   @InjectMocks
   private TrackServiceImpl trackService;
   List<Track> list = null;

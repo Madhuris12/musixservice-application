@@ -4,6 +4,7 @@ import com.stackroute.musixservice.domain.Track;
 
 import java.util.List;
 
+import com.stackroute.musixservice.exceptions.TrackAlreadyExistsException;
 import com.stackroute.musixservice.exceptions.TrackNotFoundException;
 import com.stackroute.musixservice.repository.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,18 +27,20 @@ import org.springframework.stereotype.Service;
 
         @Override
         public Track saveTrack(Track track) throws Exception {
+
+            Track savedTrack=null;
             if (trackRepository.existsById(track.getTrackID()))
             {
-                throw new Exception("Exception in saveTrack");
+                throw new TrackAlreadyExistsException("already exists Exception");
             }
-            Track track1=trackRepository.save(track);
-            if(track1==null)
-            {
-                throw new Exception("Exception in saveTrrack");
-            }
-            return track1;
-        }
-
+            else{
+                savedTrack=trackRepository.save(track);
+                if(savedTrack==null)
+                {
+                    throw new TrackAlreadyExistsException("Exception ");
+                }
+                return savedTrack;
+            }}
         @Override
         public List<Track> showAllTrack() {
             List<Track> track1=(List<Track>) trackRepository.findAll();
