@@ -60,7 +60,6 @@ import org.springframework.stereotype.Service;
             {
                 throw new TrackNotFoundException("track not found");
             }
-            //return null;
         }
 
         @Override
@@ -74,7 +73,6 @@ import org.springframework.stereotype.Service;
             {
                 throw new Exception("Exception in deleteTrack");
             }
-            //return false;
         }
 
         @Override
