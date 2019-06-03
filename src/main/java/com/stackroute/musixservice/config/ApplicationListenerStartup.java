@@ -9,8 +9,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
         import org.jboss.logging.Logger;
 
-//import java.util.logging.Logger;
-
 @Component
 @PropertySource("classpath:application.properties")
 public class ApplicationListenerStartup implements ApplicationListener<ContextRefreshedEvent> {
