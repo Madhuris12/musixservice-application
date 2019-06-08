@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/")
-public class TrackControl {
+public class MusixControl {
     private TrackService trackService;
     @Value("${app.title}")
     private String appTitle;
