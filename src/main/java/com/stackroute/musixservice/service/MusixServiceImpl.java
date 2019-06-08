@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
     @Service
-    public class TrackServiceImpl implements TrackService {
+    public class MusixServiceImpl implements TrackService {
 
         @Autowired
         private TrackRepository trackRepository;
