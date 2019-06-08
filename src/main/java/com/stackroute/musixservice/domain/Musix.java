@@ -17,45 +17,4 @@ import javax.persistence.Id;
         private String trackName;
         private String trackComments;
 
-   /*public Track() {
-   }
-
-   public Track(int trackID, String trackName, String trackComments) {
-       this.trackID = trackID;
-       this.trackName = trackName;
-       this.trackComments = trackComments;
-   }
-
-   @Override
-   public String toString() {
-       return "Track{" +
-               "trackID=" + trackID +
-               ", trackName='" + trackName + '\'' +
-               ", trackComments='" + trackComments + '\'' +
-               '}';
-   }
-
-   public int getTrackID() {
-       return trackID;
-   }
-
-   public void setTrackID(int trackID) {
-       this.trackID = trackID;
-   }
-
-   public String getTrackName() {
-       return trackName;
-   }
-
-   public void setTrackName(String trackName) {
-       this.trackName = trackName;
-   }
-
-   public String getTrackComments() {
-       return trackComments;
-   }
-
-   public void setTrackComments(String trackComments) {
-       this.trackComments = trackComments;
-   }*/
 }
