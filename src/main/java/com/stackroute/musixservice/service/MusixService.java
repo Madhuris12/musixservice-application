@@ -3,7 +3,7 @@ import com.stackroute.musixservice.domain.Track;
 import com.stackroute.musixservice.exceptions.TrackNotFoundException;
 
 import java.util.List;
-public interface TrackService{
+public interface MusixService{
     public Track saveTrack(Track track) throws Exception;
     public List<Track> showAllTrack();
     public Track updateComment(Track track) throws TrackNotFoundException;
