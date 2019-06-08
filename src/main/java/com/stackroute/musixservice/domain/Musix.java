@@ -12,7 +12,7 @@ import javax.persistence.Id;
     @AllArgsConstructor
     @Builder
 
-    public class Track {
+    public class Musix {
 
         @Id
         private int trackID;
